@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
 
@@ -34,7 +34,7 @@ export default function Incidents() {
     const response = await api.get('incidents', {
       params: {
         page,
-      }
+      },
     });
 
     setIncidents([...incidents, ...response.data]);
@@ -43,27 +43,27 @@ export default function Incidents() {
     setLoading(false);
   }
 
-
   useEffect(() => {
     loadIncidents();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return(
+  return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Image source={logoImg} />
         <Text style={styles.headerText}>
           Total de <Text style={styles.headerTextBold}>{total} casos</Text>.
-        </ Text>
+        </Text>
       </View>
 
       <Text style={styles.title}>Bem-vindo!</Text>
       <Text style={styles.description}>Escolha um dos casos e salve o dia</Text>
-      
-      <FlatList 
+
+      <FlatList
         style={styles.incidentList}
         data={incidents}
-        keyExtractor={incident => String(incident.id)}
+        keyExtractor={(incident) => String(incident.id)}
         showsVerticalScrollIndicator={false}
         onEndReached={loadIncidents}
         onEndReachedThreshold={0.2}
@@ -77,14 +77,14 @@ export default function Incidents() {
 
             <Text style={styles.incidentProperty}>VALOR:</Text>
             <Text style={styles.incidentValue}>
-              {Intl.NumberFormat('pt-BR', { 
-                style: 'currency', 
-                currency: 'BRL' 
+              {Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
               }).format(incident.value)}
             </Text>
-          
-            <TouchableOpacity 
-              style={styles.detailsButton} 
+
+            <TouchableOpacity
+              style={styles.detailsButton}
               onPress={() => navigateToDetail(incident)}
             >
               <Text style={styles.detailsButtonText}>Ver mais detalhes</Text>
@@ -92,9 +92,7 @@ export default function Incidents() {
             </TouchableOpacity>
           </View>
         )}
-      />    
+      />
     </View>
-    
-    
   );
 }
