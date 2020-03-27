@@ -14,22 +14,20 @@ describe('ONG', () => {
   });
 
   it('should be able to list all ONGs', async () => {
-    const response = await request(app).get('/ongs');    
-    
+    const response = await request(app).get('/ongs');
+
     expect(response.status).toBe(200);
   });
 
   it('should be able to create a new ONG', async () => {
-    const response = await request(app)
-      .post('/ongs')
-      .send({
-        name: "ONG - test",
-        email: "contact@ongtest.com",
-        whatsapp: "11123456789",
-        city: "São Paulo",
-        uf: "SP"
-      });    
-    
+    const response = await request(app).post('/ongs').send({
+      name: 'ONG - test',
+      email: 'contact@ongtest.com',
+      whatsapp: '11123456789',
+      city: 'São Paulo',
+      uf: 'SP',
+    });
+
     expect(response.body).toHaveProperty('id');
     expect(response.body.id).toHaveLength(8);
   });

@@ -14,34 +14,28 @@ describe('Logon', () => {
   });
 
   it('should not be able to login with a invalid ID', async () => {
-    const response = await request(app)
-      .post('/sessions')
-      .send({
-        id: '111111'
-      });    
-    
+    const response = await request(app).post('/sessions').send({
+      id: '111111',
+    });
+
     expect(response.status).toBe(400);
   });
 
   it('should be able to login with valid ID', async () => {
-    let response = await request(app)
-      .post('/ongs')
-      .send({
-        name: "ONG - test",
-        email: "contato@ongtest.com",
-        whatsapp: "11123456789",
-        city: "São Paulo",
-        uf: "SP"
-      });
+    let response = await request(app).post('/ongs').send({
+      name: 'ONG - test',
+      email: 'contact@ongtest.com',
+      whatsapp: '11123456789',
+      city: 'São Paulo',
+      uf: 'SP',
+    });
 
-    const id = response.body.id;
+    const { id } = response.body;
 
-    response = await request(app)
-      .post('/sessions')
-      .send({
-        id: id
-      });    
-    
+    response = await request(app).post('/sessions').send({
+      id,
+    });
+
     expect(response.body).toHaveProperty('name');
-  });  
+  });
 });
