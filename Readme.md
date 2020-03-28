@@ -2,11 +2,11 @@
   <img src=".github/logo.svg" title="Be The Hero" alt="Be The Hero"/>
 </div>
 
-## Propósito
+# Propósito
 
 O propósito dessa aplicação é conectar ONGs a pessoas dispostas a ajudá-las com doações em casos específicos.
 
-## Como instalar
+# Como instalar
 
 Use [git](https://github.com/lpbborges/be-the-hero) clone  para clonar o Gympoint.
 
@@ -14,7 +14,7 @@ Use [git](https://github.com/lpbborges/be-the-hero) clone  para clonar o Gympoin
 git clone https://github.com/lpbborges/be-the-hero.git
 ```
 
-## Como executar
+# Como executar
 
 ## Back-end
 ```bash
@@ -35,7 +35,7 @@ yarn start
 yarn start
 ```
 
-## Tecnologias utilizadas
+# Tecnologias utilizadas
 
 - [Node.js](https://nodejs.org/en/)
 - [KnexJS](http://knexjs.org/)
@@ -47,7 +47,7 @@ yarn start
 - [React Native](https://facebook.github.io/react-native/)
 - [Expo](https://expo.io/)
 
-## Licença
+# Licença
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
