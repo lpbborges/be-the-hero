@@ -1,4 +1,4 @@
-<div style="text-align: center;">
+<div style="display: flex; justify-content: center;">
   <img src=".github/logo.svg" title="Be The Hero" alt="Be The Hero"/>
 </div>
 
