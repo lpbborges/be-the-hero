@@ -11,7 +11,7 @@
 }
 
 .profile-container header span {
-  font-size: 1.4em;
+  font-size: 2.0rem;
   margin-left: 24px;
 }
 
@@ -83,6 +83,6 @@
 
 .profile-container ul li p {
   color: #737380;
-  line-height: 21px;
-  font-size: 1.1em;  
+  line-height: 2.1rem;
+  font-size: 1.6rem;
 }
