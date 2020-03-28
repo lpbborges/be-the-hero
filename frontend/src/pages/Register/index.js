@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 
 import api from '../../services/api';
-import { whatsappMask } from '../../utils/masks';
+import { phoneMask } from '../../utils/masks';
 import logoImg from '../../assets/logo.svg';
 
 import './styles.css';
@@ -71,7 +71,7 @@ export default function Register() {
             placeholder="Whatsapp"
             type="tel"
             value={whatsapp}
-            onChange={(e) => setWhatsapp(whatsappMask(e.target.value))}
+            onChange={(e) => setWhatsapp(phoneMask(e.target.value))}
             maxLength={15}
           />
           <div className="input-group">
